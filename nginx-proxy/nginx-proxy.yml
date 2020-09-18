@@ -1,0 +1,31 @@
+version: '3'
+# Little test
+services:
+    webapp:
+      image: "python:3.8-buster"
+      volumes:
+         - ${DATA_VOLUME}/data:/usr/local/renci/data
+      entrypoint: [ /bin/bash ]
+      command:
+        - "-c"
+        - "cd /tmp && echo '<html><body>Hello!</body></html>' > index.html; /usr/bin/python3 -m http.server 8000"
+      network_mode: service:nginx
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:8000/index.html"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3
+
+    nginx:
+      # testing against a local build of the Dockerfile
+      image: "nginx-proxy:reuben"
+      ports: 
+        - "${SERVICE_PORT}:7780"
+      environment:
+        - "APP_PORT=8000"
+      healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:7780/_proxy_status"]
+        interval: 1m30s
+        timeout: 10s
+        retries: 3
+    
