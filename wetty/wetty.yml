@@ -2,13 +2,21 @@
 version: '3.5'
 services:
   wetty-sshd:
+    #image: sshd:reuben
     image: quay.io/cdis/ws-sshd:2020.09.1
     network_mode: service:wetty
     container_name: 'wetty-sshd'
+    environment:
+        - HOSTNAME=whatever
+        - NAMESPACE=default
+        - https_proxy=http://cloud-proxy.internal.io:3128
+        - http_proxy=http://cloud-proxy.internal.io:3128
+        - no_proxy=localhost,127.0.0.1,127.0.0.11,169.254.169.254,.internal.io,s3.us-east-1.amazonaws.com,.local
     volumes:
       - ${DATA_VOLUME}:/data
       - ${USER_VOLUME}:/home/gen3/pd
   wetty:
+    #image: wetty:reuben
     image: quay.io/cdis/wetty:2020.09.1
     container_name: wetty
     tty: true
@@ -16,8 +24,8 @@ services:
     ports:
       - '${SERVICE_PORT}:3000'
     environment:
-      SSHHOST: 'localhost'
-      SSHPASS: gen3
-      SSHUSER: gen3
-      SSHPORT: '22'
-      BASE: /lw-workspace/proxy/
+      - SSHHOST=localhost
+      - SSHPASS=gen3
+      - SSHUSER=gen3
+      - SSHPORT=22
+      - BASE=/lw-workspace/proxy/
