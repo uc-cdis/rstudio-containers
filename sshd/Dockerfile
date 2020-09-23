@@ -17,7 +17,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /var/run/sshd && rm -rf /var/log/* && ln -sf /dev/stdout /var/log/lastlog
+RUN mkdir /var/run/sshd \
+  && rm -rf /var/log/* \
+  && ln -sf /dev/stdout /var/log/lastlog \
+  && update-alternatives --install /usr/bin/python python /usr/bin/python3 100
 
 #RUN echo 'root:THEPASSWORDYOUCREATED' | chpasswd
 #RUN sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
