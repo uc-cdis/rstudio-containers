@@ -1,5 +1,6 @@
 data-volume/
 user-volume/
+node_modules/
 *.bak
 *~
 *.old
