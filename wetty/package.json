@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "wetty": "^1.4.1"
+    "wetty": "^2.0.2"
   }
 }

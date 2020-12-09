@@ -1,10 +1,11 @@
-FROM ubuntu:20.04
+FROM quay.io/cdis/ubuntu:20.04
 
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update \
     && apt-get install -y \
     apt-transport-https \
     apt-utils \
+    bash-completion \
     build-essential \
     ca-certificates \
     curl \
@@ -27,7 +28,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     unzip \
     vim \
     wget \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/log/*
@@ -52,3 +53,4 @@ RUN useradd -m -s /bin/bash gen3 && \
 
 EXPOSE 22
 CMD ["/bin/bash", "/docker-start.sh"]
+
