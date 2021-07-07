@@ -24,7 +24,6 @@ services:
             cpus: '0.5'
             memory: 512M
     nginx:
-      # testing against a local build of the Dockerfile
       image: "quay.io/cdis/ws-nginx-proxy:latest"
       ports:
         - "${SERVICE_PORT}:7780"
