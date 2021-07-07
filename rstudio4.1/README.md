@@ -1,6 +1,6 @@
 # TL;DR
 
-RStudio 4.1.0 base image (with devtools and tidyverse included in base image) and docker-compose suitable for deployment to Gen3 hatchery.
+RStudio 4.1.0 base image (with `devtools` and `tidyverse` included in base image) and docker-compose suitable for deployment to Gen3 hatchery.
 
 # Hatchery deployment
 

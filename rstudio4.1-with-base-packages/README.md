@@ -1,6 +1,6 @@
 # TL;DR
 
-RStudio 4.1.0 base image with two more base packages (Rmarkdown and tinytex) and docker-compose suitable for deployment to Gen3 hatchery.
+RStudio 4.1.0 base image with two more base packages (`Rmarkdown` and `tinytex`) and docker-compose suitable for deployment to Gen3 hatchery.
 
 # Hatchery deployment
 
