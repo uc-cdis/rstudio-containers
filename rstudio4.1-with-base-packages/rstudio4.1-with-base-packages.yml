@@ -1,7 +1,7 @@
 version: '3'
 services:
     webapp:
-      image: "quay.io/cdis/rstudio4.1:latest"
+      image: "quay.io/cdis/rstudio4.1-with-base-packages:latest"
       volumes:
          - ${DATA_VOLUME}:/data
          - ${USER_VOLUME}:/home/rstudio/pd
