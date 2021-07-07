@@ -1,4 +1,4 @@
-FROM rocker/rstudio:4.1.0
+FROM quay.io/cdis/rocker-rstudio:4.1.0
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
