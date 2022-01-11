@@ -1,5 +1,5 @@
 ## Dockerfile for rocker/tidyverse with trial base-layer security improvements, based on Rstudio tidyverse image with additional upgrades ###
-FROM rocker/rstudio:3.6.3-ubuntu18.04
+FROM quay.io/cdis/rocker_rstudio:3.6.3-ubuntu18.04
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
   libcairo2-dev \
