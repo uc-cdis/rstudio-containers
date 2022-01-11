@@ -10,6 +10,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libssl-dev \
   libssh2-1-dev \
   libpq-dev \
+  libglpk-dev \
   && install2.r --error \
     --deps TRUE \
     tidyverse \
