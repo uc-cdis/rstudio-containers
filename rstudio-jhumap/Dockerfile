@@ -1,4 +1,4 @@
-FROM quay.io/cdis/rstudio3.6:rstudio3.6-1.0.0
+FROM quay.io/cdis/rstudio3.6:master
 
 
 # COPY premade notebook
