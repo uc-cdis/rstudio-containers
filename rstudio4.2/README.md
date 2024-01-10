@@ -10,7 +10,7 @@
 ```
 {
   "type": "dockstore-compose:1.0.0",
-  "path": "/hatchery-more-configs/rstudio4.1.yml",
+  "path": "/hatchery-more-configs/rstudio4.2.yml",
   "name": "DockstoreDicom"
 }
 ```
